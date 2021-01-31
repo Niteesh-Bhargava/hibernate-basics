@@ -7,6 +7,7 @@
         <class>com.niteesh.entity.Item</class>
         <class>com.niteesh.entity.Bid</class>
         <class>com.niteesh.entity.Department</class>
+        <class>com.niteesh.entity.Employee</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>
             
