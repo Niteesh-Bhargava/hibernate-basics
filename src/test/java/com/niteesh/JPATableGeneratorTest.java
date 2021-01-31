@@ -61,5 +61,6 @@ public class JPATableGeneratorTest extends HelloWorldJPA {
         ian.setName("Ian");
         em.persist(ian);
         //printNativeQueryResult(SELECT_SEQUENCES_SQL);
+        printNativeQueryResult(SELECT_PUBLIC_TABLES_SQL);
     }
 }
