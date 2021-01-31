@@ -61,6 +61,8 @@ public class HelloWorldJPA {
     public void testMessagesDataFetch() {
         List<Message> messages = em.createQuery("select m from Message m").getResultList();
         log.debug("Fetched essages " + messages);
-        messages.get(0).setText("Updated Text");
+        if(!messages.isEmpty()){
+            messages.get(0).setText("Updated Text");
+        }
     }
 }

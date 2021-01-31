@@ -1,15 +1,13 @@
 package com.niteesh.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
+
+import javax.persistence.*;
 
 @Entity
 public class Department {
     @Id
     @SequenceGenerator(name = "deptIdGen", sequenceName = "deptIdSeq", initialValue = 5, allocationSize = 100)
-    @GeneratedValue(generator = "deptIdGen")
+    @GeneratedValue(generator = "deptIdGen", strategy = GenerationType.SEQUENCE)
     protected long id;
     protected String deptName;
 

@@ -1,24 +1,19 @@
 package com.niteesh;
 
 import com.niteesh.entity.Department;
-import com.niteesh.entity.Item;
-import com.niteesh.entity.Item_;
+import com.niteesh.entity.hibernate.sequence.Bus;
 import org.junit.jupiter.api.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.persistence.Query;
 import javax.persistence.Tuple;
-import javax.persistence.metamodel.*;
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.Arrays;
+import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
+public class HibernateSeqGenTest extends SequenceGenBaseTest {
 
-public class JPASequenceGeneratorTest extends SequenceGenBaseTest{
-
-    protected static Logger log = LoggerFactory.getLogger(JPASequenceGeneratorTest.class);
+    protected static Logger log = LoggerFactory.getLogger(HibernateSeqGenTest.class);
 
     @BeforeAll
     public void init(){
@@ -40,10 +35,10 @@ public class JPASequenceGeneratorTest extends SequenceGenBaseTest{
     }
 
     @Test
-    public void testSequenceGen(){
-        Department department = new Department();
-        department.setDeptName("Finance Department");
-        em.persist(department);
+    public void testHibernateSequenceGen(){
+        Bus bus = new Bus();
+        bus.setCompanyName("City Link Bus");
+        em.persist(bus);
         printNativeQueryResult(SELECT_SCHEMA_SEQUENCES_SQL);
     }
 }

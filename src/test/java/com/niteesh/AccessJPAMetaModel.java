@@ -38,7 +38,7 @@ public class AccessJPAMetaModel extends HelloWorldJPA {
     @Test
     public void testMetaModelApi(){
         Set<ManagedType<?>> managedTypes = metamodel.getManagedTypes();
-        assertEquals(3, managedTypes.size());
+        assertEquals(6, managedTypes.size());
         managedTypes
                 .stream().
                 forEach(managedType -> assertEquals(managedType.getPersistenceType(), Type.PersistenceType.ENTITY));
