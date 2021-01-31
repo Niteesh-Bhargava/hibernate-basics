@@ -12,6 +12,7 @@ repositories {
 dependencies {
     compile group: 'org.hibernate', name: 'hibernate-entitymanager', version: '5.4.27.Final'
     compile group: 'org.hibernate', name: 'hibernate-validator', version: '5.4.2.Final'
+    annotationProcessor group: 'org.hibernate', name: 'hibernate-jpamodelgen', version: '5.4.27.Final'
     compile group: 'ch.qos.logback', name: 'logback-core', version: '1.2.3'
     compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.30'
     compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
@@ -21,6 +22,19 @@ dependencies {
 
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+}
+
+tasks.withType(JavaCompile) {
+    options.annotationProcessorGeneratedSourcesDirectory = file("src/generated/java")
+}
+
+
+sourceSets {
+    generated {
+        java {
+            srcDirs = ['src/generated/java']
+        }
+    }
 }
 
 test {

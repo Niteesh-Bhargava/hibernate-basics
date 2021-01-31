@@ -48,6 +48,4 @@ public class ModelOperations extends HelloWorldJPA {
             assertEquals(voilation.getMessage(),"must be in the future");
         }
     }
-
-
 }

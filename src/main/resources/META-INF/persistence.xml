@@ -6,6 +6,7 @@
         <class>com.niteesh.entity.Message</class>
         <class>com.niteesh.entity.Item</class>
         <class>com.niteesh.entity.Bid</class>
+        <class>com.niteesh.entity.Department</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>
             
