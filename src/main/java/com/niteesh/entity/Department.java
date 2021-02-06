@@ -1,9 +1,14 @@
 package com.niteesh.entity;
 
 
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
+
 import javax.persistence.*;
 
 @Entity
+@DynamicInsert
+@DynamicUpdate
 public class Department {
     @Id
     @SequenceGenerator(name = "deptIdGen", sequenceName = "deptIdSeq", initialValue = 5, allocationSize = 100)

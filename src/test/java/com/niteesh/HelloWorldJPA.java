@@ -42,7 +42,7 @@ public class HelloWorldJPA {
 
     @AfterEach
     public void afterEachTest() {
-        if (tx != null) {
+        if ((tx != null) && (tx.isActive())) {
             tx.commit();
         }
         if (em != null) {

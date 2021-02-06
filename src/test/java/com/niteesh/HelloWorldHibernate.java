@@ -1,6 +1,7 @@
 package com.niteesh;
 
 import com.niteesh.entity.Message;
+import com.niteesh.entity.NoopItem;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -19,10 +20,10 @@ import static org.junit.jupiter.api.TestInstance.Lifecycle.PER_CLASS;
 @TestInstance(PER_CLASS)
 public class HelloWorldHibernate {
 
-    private static SessionFactory sessionFactory;
-    private static Session session;
+    protected static SessionFactory sessionFactory;
+    protected static Session session;
 
-    private static Logger log = LoggerFactory.getLogger(HelloWorldJPA.class);
+    private static Logger log = LoggerFactory.getLogger(HelloWorldHibernate.class);
 
     @BeforeAll
     public void init(){

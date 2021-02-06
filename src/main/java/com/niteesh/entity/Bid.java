@@ -1,8 +1,11 @@
 package com.niteesh.entity;
 
+import org.hibernate.annotations.Immutable;
+
 import javax.persistence.*;
 
 @Entity
+@Immutable
 public class Bid {
     @Id
     @GeneratedValue
