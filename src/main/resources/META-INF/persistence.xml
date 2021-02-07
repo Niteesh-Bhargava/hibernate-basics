@@ -10,6 +10,7 @@
         <class>com.niteesh.entity.Employee</class>
         <class>com.niteesh.entity.ItemBidSummery</class>
         <class>com.niteesh.entity.SaleItem</class>
+        <class>com.niteesh.entity.NoopItem</class>
         <class>com.niteesh.entity.hibernate.sequence.Bus</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>

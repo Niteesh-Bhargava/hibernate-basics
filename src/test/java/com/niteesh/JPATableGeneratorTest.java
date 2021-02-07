@@ -44,10 +44,12 @@ public class JPATableGeneratorTest extends SequenceGenBaseTest {
 
         Employee niteesh = new Employee();
         niteesh.setName("Niteesh Bhargava");
+        niteesh.setSalary(4500);
         em.persist(niteesh);
 
         Employee ian = new Employee();
         ian.setName("Ian");
+        ian.setSalary(3800);
         em.persist(ian);
         //printNativeQueryResult(SELECT_SEQUENCES_SQL);
         printNativeQueryResult(SELECT_PUBLIC_TABLES_SQL);
