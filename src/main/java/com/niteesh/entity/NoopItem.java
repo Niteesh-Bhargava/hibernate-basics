@@ -1,11 +1,11 @@
 package com.niteesh.entity;
 
-import org.hibernate.annotations.ColumnTransformer;
+import org.hibernate.annotations.*;
 
-import javax.persistence.Column;
+import javax.persistence.*;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import java.math.BigDecimal;
+import java.util.Date;
 
 @Entity
 public class NoopItem {
@@ -24,6 +24,20 @@ public class NoopItem {
             write = "? * 2.20462"
     )
     protected double metricWeight;
+
+    /*@Temporal(TemporalType.TIMESTAMP)
+    @Column(insertable = false, updatable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    @Generated(GenerationTime.ALWAYS)*/
+    @UpdateTimestamp
+    protected Date lastModified;
+
+    @CreationTimestamp
+    protected Date createdDate;
+
+    @Column(insertable = false)
+    @Generated(GenerationTime.INSERT)
+    @ColumnDefault("1.0")
+    protected BigDecimal initialPrice;
 
     public Long getId() {
         return id;
@@ -55,5 +69,21 @@ public class NoopItem {
 
     public void setMetricWeight(double metricWeight) {
         this.metricWeight = metricWeight;
+    }
+
+    public Date getLastModified() {
+        return lastModified;
+    }
+
+    public void setLastModified(Date lastModified) {
+        this.lastModified = lastModified;
+    }
+
+    public BigDecimal getInitialPrice() {
+        return initialPrice;
+    }
+
+    public void setInitialPrice(BigDecimal initialPrice) {
+        this.initialPrice = initialPrice;
     }
 }
